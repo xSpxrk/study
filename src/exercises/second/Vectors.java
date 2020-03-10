@@ -32,14 +32,27 @@ public class Vectors {
         return dotProduct(vector)/(length()+vector.length());
     }
 
-    public Vectors sum(Vectors vector){
+    public Vectors add(Vectors vector){
         Vectors result = new Vectors(x+vector.x,y+vector.y,z+vector.z);
-
         return result;
     }
-    public Vectors dif(Vectors vector){
+    public Vectors sub(Vectors vector){
         Vectors result = new Vectors(x-vector.x,y-vector.y,z-vector.z);
-
         return result;
+    }
+    public static  Vectors[] generate(int n){
+        Vectors[] vectors = new Vectors[n];
+        for (int i = 0; i<n;i++)
+            vectors[i] = new Vectors(Math.random(),Math.random(),Math.random());
+        return vectors;
+    }
+
+    @Override
+    public String toString() {
+        return "Vectors{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                '}';
     }
 }
